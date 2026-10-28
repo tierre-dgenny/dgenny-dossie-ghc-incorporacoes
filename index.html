@@ -209,6 +209,46 @@ main h2 {
 }
 .card .valor strong { color: var(--roxo); }
 
+.fluxo-etapas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+@media (max-width: 800px) { .fluxo-etapas { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .fluxo-etapas { grid-template-columns: 1fr; } }
+.fluxo-etapa {
+  position: relative;
+  background: rgba(102,96,180,0.05);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 16px 14px;
+}
+.fluxo-etapa .fluxo-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--roxo);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 8px;
+}
+.fluxo-etapa strong {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.fluxo-etapa p {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--text-soft);
+}
+
 .card.internal {
   border: 1px dashed var(--text-soft);
   background: transparent;
@@ -384,6 +424,7 @@ footer {
 <nav class="sidebar">
   <ul>
     <li><a href="#motivo">Motivo do contato</a></li>
+    <li><a href="#fluxo-cotacao">Fluxo de cotação</a></li>
     <li><a href="#dores">Dores expressas</a></li>
     <li><a href="#desejos">Desejos de melhoria</a></li>
     <li><a href="#eventos">Eventos críticos</a></li>
@@ -403,6 +444,20 @@ footer {
   <h2>Motivo do contato</h2>
   <div class="card">
     <p>O diretor da GHC viu uma publicação da dgenny® no Instagram e pediu ao Tito Amorim (gerente de TI e consultor de IA da empresa) que marcasse a reunião para conhecer a ferramenta. A empresa já usa IA nas áreas comercial e de marketing, e um robô simples no financeiro — compras era o único setor ainda sem aplicação de IA.</p>
+  </div>
+</section>
+
+<section id="fluxo-cotacao">
+  <h2>Fluxo de cotação</h2>
+  <div class="card">
+    <div class="fluxo-etapas">
+      <div class="fluxo-etapa"><span class="fluxo-num">1</span><strong>Onde começa</strong><p>Toda solicitação de compra nasce no Sienge — produto, serviço, insumo ou locação. Locação só entra no Sienge depois de já locada (não passa por cotação).</p></div>
+      <div class="fluxo-etapa"><span class="fluxo-num">2</span><strong>Etapas até o fornecedor</strong><p>Socorro monta a cotação por tipo de material (ex.: EPI) e indica no próprio Sienge quais fornecedores participam. O sistema gera e envia o link de cotação — ela não digita nada manualmente.</p></div>
+      <div class="fluxo-etapa"><span class="fluxo-num">3</span><strong>Canais de comunicação</strong><p>Principal: link de cotação do portal Sienge. WhatsApp é usado só pontualmente, para cobrar fornecedor que não respondeu, principalmente quando a obra pede com urgência ("pra ontem").</p></div>
+      <div class="fluxo-etapa"><span class="fluxo-num">4</span><strong>Prazo de resposta</strong><p>Socorro combina 2 dias de prazo com os fornecedores e normalmente recebe o retorno dentro desse prazo.</p></div>
+      <div class="fluxo-etapa"><span class="fluxo-num">5</span><strong>Retorno para o ERP</strong><p>O próprio fornecedor preenche a cotação pelo link, e a resposta já volta para dentro do Sienge — Socorro só analisa, sem precisar lançar dado nenhum manualmente.</p></div>
+      <div class="fluxo-etapa"><span class="fluxo-num">6</span><strong>Preenchimento do mapa comparativo</strong><p>Não existe um mapa comparativo separado em Excel — a análise de menor preço, qualidade e prazo de entrega é feita diretamente na tela do Sienge, e a decisão de compra é tomada ali mesmo.</p></div>
+    </div>
   </div>
 </section>
 
